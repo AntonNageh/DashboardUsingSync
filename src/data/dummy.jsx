@@ -561,21 +561,24 @@ export const links = [
 export const cartData = [
   {
     image:
-      product5,
+    product5,
     name: 'butterscotch ice-cream',
+    id: 0,
     category: 'Milk product',
     price: '$250',
   },
   {
     image:
-      product6,
+    product6,
+    id: 1,
     name: 'Supreme fresh tomato',
     category: 'Vegetable Item',
     price: '$450',
   },
   {
     image:
-      product7,
+    product7,
+    id: 2,
     name: 'Red color candy',
     category: 'Food Item',
     price: '$190',
@@ -621,7 +624,7 @@ export const earningData = [
     title: 'Customers',
     iconColor: '#03C9D7',
     iconBg: '#E5FAFB',
-    pcColor: 'red-600',
+    pcColor: 'text-red-600',
   },
   {
     icon: <BsBoxSeam />,
@@ -630,7 +633,7 @@ export const earningData = [
     title: 'Products',
     iconColor: 'rgb(255, 244, 229)',
     iconBg: 'rgb(254, 201, 15)',
-    pcColor: 'green-600',
+    pcColor: 'text-green-600',
   },
   {
     icon: <FiBarChart />,
@@ -640,7 +643,7 @@ export const earningData = [
     iconColor: 'rgb(228, 106, 118)',
     iconBg: 'rgb(255, 244, 229)',
 
-    pcColor: 'green-600',
+    pcColor: 'text-green-600',
   },
   {
     icon: <HiOutlineRefresh />,
@@ -649,7 +652,7 @@ export const earningData = [
     title: 'Refunds',
     iconColor: 'rgb(0, 194, 146)',
     iconBg: 'rgb(235, 250, 242)',
-    pcColor: 'red-600',
+    pcColor: 'text-red-600',
   },
 ];
 

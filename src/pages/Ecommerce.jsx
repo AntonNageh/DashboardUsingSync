@@ -2,24 +2,24 @@ import React from 'react'
 import { GoDotFill } from 'react-icons/go';
 import { Stacked, Button, SparkLine} from '../Components'
 import { earningData, SparklineAreaData} from '../data/dummy'
+import { useStateContext } from '../Contexts/ContextProvider';
 
 
 const Ecommerce = () => {
-  let positive = 'text-green-600';
-  let negative = 'text-red-600';
+  const { currentColor } = useStateContext();
   return (
   
     <div className='mt-12'>
       <div className='flex flex-wrap flex-col lg:flex-nowrap justify-center '>
         <div className='bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44
         rounded-xl w-full p-8 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center'>
-          <div className='flex flex-col justify-between items-start'>
+          <div className='flex flex-col justify-between items-start mb-10'>
             <div>
-              <p className='font-bold text-gray-400'>Earnings</p>
-              <p className='text-2xl'>$63,448.78</p>
+              <p className='font-bold text-gray-400 '>Earnings</p>
+              <p className='text-2xl  dark:text-black'>$63,448.78</p>
             </div>
             <div className='mt-6'>
-              <Button color="white" bgColor="blue" text="Download" borderRadius="10px" size="md"/>
+              <Button color="white" bgColor={currentColor} text="Download" borderRadius="10px" size="md"/>
             </div>
           </div>
           <div className='flex m-3 flex-wrap justify-center gap-1 h-full
@@ -36,7 +36,7 @@ const Ecommerce = () => {
                     <span className='text-lg font-semibold'>
                       {item.amount}
                     </span>
-                    <span className={`text-sm ${item.percentage.split("%")[0]>0? positive : negative} ml-2`}>
+                    <span className={`text-sm ${item.pcColor} ml-2`}>
                       {item.percentage}
                     </span>
                   </p>
@@ -90,19 +90,19 @@ const Ecommerce = () => {
                   </div>
                   <div className='mt-5'>
                     <SparkLine
-                      currentColor="blue"
+                      currentColor={currentColor}
                       id="line-sparkline"
                       type="Line"
                       height="80px"
                       width="250px"
                       data={SparklineAreaData}
-                      color="blue"
+                      color={currentColor}
                     />
                   </div>
                     <div className='mt-10'>
                       <Button
                       color="white"
-                      bgColor="blue"
+                      bgColor={currentColor}
                       text="Download Report"
                       borderRadius="10px"/>
                     </div>
