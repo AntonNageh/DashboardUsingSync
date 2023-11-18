@@ -1,30 +1,18 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
 import {
-SignedIn,
-SignedOut,
-UserButton,
-SignInButton,
 useUser,
-RedirectToSignIn
 } from "@clerk/clerk-react";
 import { TooltipComponent } from '@syncfusion/ej2-react-popups'
 import { FiSettings } from 'react-icons/fi'
 
-import {Navbar, Footer, Header, Sidebar, ThemeSettings} from './Components';
+import {Navbar, Sidebar, ThemeSettings} from './Components';
 import {Ecommerce,
   Orders,
-  Stacked,
-  Pyramid,
   Customers,
   Employees,
   Kanban,
-  Area, 
-  Bar, 
-  Pie, 
-  Financial, 
   ColorPicker, 
-  ColorMapping, 
   Calendar,
   Editor,
   Line,
@@ -99,13 +87,6 @@ import {Ecommerce,
               <Route element={<ColorPicker/>} path='/Color-picker'/>
             {/* Charts */}
               <Route element={<Line/>} path='/Line'/>
-              <Route element={<Area/>} path='/Area'/>
-              <Route element={<Bar/>} path='/Bar'/>
-              <Route element={<Pie/>} path='/Pie'/>
-              <Route element={<Financial/>} path='/Financial'/>
-              <Route element={<ColorMapping/>} path='/Color-mapping'/>
-              <Route element={<Pyramid/>} path='/Pyramid'/>
-              <Route element={<Stacked/>} path='/Stacked'/>
             </Routes>
           </div>
         </div>
