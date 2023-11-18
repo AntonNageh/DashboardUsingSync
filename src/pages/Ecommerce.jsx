@@ -3,10 +3,11 @@ import { GoDotFill } from 'react-icons/go';
 import { Button, SparkLine} from '../Components'
 import { earningData, SparklineAreaData} from '../data/dummy'
 import { useStateContext } from '../Contexts/ContextProvider';
+import Stacked from '../Components/Charts/Stacked';
 
 
 const Ecommerce = () => {
-  const { currentColor } = useStateContext();
+  const { currentColor, currentMode } = useStateContext();
   return (
   
     <div className='mt-12'>
@@ -107,7 +108,9 @@ const Ecommerce = () => {
                       borderRadius="10px"/>
                     </div>
                   </div>
-
+                  <div>
+                    <Stacked currentMode={currentMode} width="320px" height="360px" />
+                  </div>
                 </div>
             </div>
       </div> 
