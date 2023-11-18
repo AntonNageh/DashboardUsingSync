@@ -41,7 +41,7 @@ export default {
       },
       backgroundImage: {
         'hero-pattern':
-          "url('./assets/woman10.png')",
+          "url('./assets/welcome-bg.svg')",
       },
     },
   },
