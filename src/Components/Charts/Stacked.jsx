@@ -4,7 +4,6 @@ import { ChartComponent, SeriesCollectionDirective, SeriesDirective, Inject, Leg
 import { stackedCustomSeries, stackedPrimaryXAxis, stackedPrimaryYAxis } from '../../data/dummy'
 
 const Stacked = ({width, height}) => {
-  console.log(height, width)
   return (
       <ChartComponent 
       width={width} 

@@ -1,13 +1,12 @@
 import React from 'react'
-import { BsCurrencyDollar } from 'react-icons/bs';
 import { GoDotFill } from 'react-icons/go';
-import { Stacked, Pie, Button, SparkLine} from '../Components'
-import { earningData, SparklineAreaData, ecomPieChartData} from '../data/dummy'
-import { useStateContext } from '../Contexts/ContextProvider';
+import { Stacked, Button, SparkLine} from '../Components'
+import { earningData, SparklineAreaData} from '../data/dummy'
 
 
 const Ecommerce = () => {
-
+  let positive = 'text-green-600';
+  let negative = 'text-red-600';
   return (
   
     <div className='mt-12'>
@@ -37,7 +36,7 @@ const Ecommerce = () => {
                     <span className='text-lg font-semibold'>
                       {item.amount}
                     </span>
-                    <span className={`text-sm text-${item.pcColor} ml-2`}>
+                    <span className={`text-sm ${item.percentage.split("%")[0]>0? positive : negative} ml-2`}>
                       {item.percentage}
                     </span>
                   </p>
@@ -104,7 +103,7 @@ const Ecommerce = () => {
                       <Button
                       color="white"
                       bgColor="blue"
-                      text="Downlaod Report"
+                      text="Download Report"
                       borderRadius="10px"/>
                     </div>
                   </div>

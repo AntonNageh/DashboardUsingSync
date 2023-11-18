@@ -1,6 +1,13 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
-
+import {
+SignedIn,
+SignedOut,
+UserButton,
+SignInButton,
+useUser,
+RedirectToSignIn
+} from "@clerk/clerk-react";
 import { TooltipComponent } from '@syncfusion/ej2-react-popups'
 import { FiSettings } from 'react-icons/fi'
 
@@ -20,11 +27,19 @@ import {Ecommerce,
   ColorMapping, 
   Calendar,
   Editor,
-  Line} 
-    from './pages';
+  Line,
+  Welcome} 
+  from './pages';
   import { useStateContext } from './Contexts/ContextProvider';  
-    
-  function App() {
+
+
+ 
+ function App() {
+  const User = useUser()
+  if(!User.isSignedIn)
+   return ( 
+     <Welcome/>
+   )
     const { activeMenu } = useStateContext();
 
   return (
@@ -65,24 +80,24 @@ import {Ecommerce,
             <Routes>
             {/* Dashboard  */}
               <Route element={<Ecommerce/>} path='/'/>
-              <Route element={<Ecommerce/>} path='/ecommerce'/>
+              <Route element={<Ecommerce/>} path='/Ecommerce'/>
             {/* Pages */}
-              <Route element={<Orders/>} path='/orders'/>
-              <Route element={<Employees/>} path='/employees'/>
-              <Route element={<Customers/>} path='/customers'/>
+              <Route element={<Orders/>} path='/Orders'/>
+              <Route element={<Employees/>} path='/Employees'/>
+              <Route element={<Customers/>} path='/Customers'/>
             {/* Apps */}
-              <Route element={<Kanban/>} path='/kanban'/>
-              <Route element={<Editor/>} path='/editor'/>
-              <Route element={<Calendar/>} path='/calendar'/>
-              <Route element={<ColorPicker/>} path='/color-picker'/>
+              <Route element={<Kanban/>} path='/Kanban'/>
+              <Route element={<Editor/>} path='/Editor'/>
+              <Route element={<Calendar/>} path='/Calendar'/>
+              <Route element={<ColorPicker/>} path='/Color-picker'/>
             {/* Charts */}
               <Route element={<Line/>} path='/Line'/>
               <Route element={<Area/>} path='/Area'/>
               <Route element={<Bar/>} path='/Bar'/>
               <Route element={<Pie/>} path='/Pie'/>
               <Route element={<Financial/>} path='/Financial'/>
-              <Route element={<ColorMapping/>} path='/color-mapping'/>
-              <Route element={<Pyramid/>} path='/pyramid'/>
+              <Route element={<ColorMapping/>} path='/Color-mapping'/>
+              <Route element={<Pyramid/>} path='/Pyramid'/>
               <Route element={<Stacked/>} path='/Stacked'/>
             </Routes>
           </div>
