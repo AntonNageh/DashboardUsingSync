@@ -13,7 +13,7 @@ const Ecommerce = () => {
     <div className='mt-12'>
       <div className='flex flex-wrap flex-col lg:flex-nowrap justify-center '>
         <div className='bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44
-        rounded-xl w-full p-8 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center'>
+        rounded-xl w-full p-8 pt-9 bg-hero-pattern bg-no-repeat bg-cover bg-center'>
           <div className='flex flex-col justify-between items-start mb-10'>
             <div>
               <p className='font-bold text-gray-400 '>Earnings</p>
