@@ -17,18 +17,18 @@ const Ecommerce = () => {
           <div className='flex flex-col justify-between items-start mb-10'>
             <div>
               <p className='font-bold text-gray-400 '>Earnings</p>
-              <p className='text-2xl  dark:text-black'>$63,448.78</p>
+              <p className='text-2xl dark:text-white'>$63,448.78</p>
             </div>
             <div className='mt-6'>
               <Button color="white" bgColor={currentColor} text="Download" borderRadius="10px" size="md"/>
             </div>
           </div>
-          <div className='flex m-3 flex-wrap justify-center gap-1 h-full
+          <div className='flex m-3 flex-wrap justify-center md:gap-1 gap-5 h-full
           items-center'>
               {
               earningData.map((item) => (
                 <div key={item.title} className='bg-white dark:text-gray-200 dark:bg-secondary-dark-bg
-                md:w-56 p-4 pt-9 rounded-2xl'>
+                md:w-56 p-4 pt-9 rounded-2xl flex flex-wrap flex-1 md:inline-block '>
                   <button type='button' style={{color:item.iconColor, backgroundColor:item.iconBg}}
                   className='text-2xl opacity-[0.9] rounded-full p-4'>
                     {item.icon}
@@ -49,12 +49,12 @@ const Ecommerce = () => {
             }
           </div>
         </div>
-      <div className='flex gap-10 lg:mt-72 mt-80 flex-wrap justify-center'>
+      <div className='flex gap-10 lg:mt-72 mt-[25rem] flex-wrap justify-center'>
             <div className='bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4
             rounded-2xl md:w-780'>
               <div className='flex justify-between'>
                 <p className='font-semibold text-xl'>Revenue updates</p>
-                <div className='flex items-center gap-4'>
+                <div className='flex items-center gap-4 ml-10 px-1'>
                   <p className='flex items-center gap-2 text-gray-600 hover:drop-shadow-xl'>
                     <span>
                       <GoDotFill/>
